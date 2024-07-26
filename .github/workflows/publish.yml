@@ -16,6 +16,12 @@ jobs:
           npm install
           npm run make -- --targets @electron-forge/maker-zip -p win32
 
+      - name: Upload Windows build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-build
+          path: ./out/make/zip/win32/x64
+
   buildMac:
     runs-on: macos-latest
     steps:
@@ -26,3 +32,9 @@ jobs:
         run: |
           npm install
           npm run make -- --targets @electron-forge/maker-zip -p darwin
+
+      - name: Upload Mac build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: mac-build
+          path: ./out/make/zip/darwin/arm64
