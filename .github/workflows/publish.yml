@@ -1,0 +1,16 @@
+name: Publish
+
+on:
+  push:
+    branches: ["feature/publish"]
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest commit
+        uses: actions/checkout@v4
+
+      - name: Make packages
+        run: |
+          npm run make
