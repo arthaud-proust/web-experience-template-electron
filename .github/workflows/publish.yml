@@ -13,5 +13,5 @@ jobs:
 
       - name: Make packages
         run: |
-          npm ci
+          npm install
           npm run make
