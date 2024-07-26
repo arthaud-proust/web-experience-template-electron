@@ -14,4 +14,4 @@ jobs:
       - name: Make packages
         run: |
           npm install
-          npm run make
+          npm run make --targets zip
