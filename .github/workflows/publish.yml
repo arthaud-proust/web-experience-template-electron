@@ -5,7 +5,7 @@ on:
     branches: ["feature/publish"]
 
 jobs:
-  bundle:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout latest commit
@@ -13,4 +13,5 @@ jobs:
 
       - name: Make packages
         run: |
+          npm ci
           npm run make
